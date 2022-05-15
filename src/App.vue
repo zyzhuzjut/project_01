@@ -1,28 +1,33 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app-container">
+    <h1>App组件</h1>
+    <hr />
+
+    <!-- 渲染子组件left和right -->
+    <div class="box">
+      <left></left>
+      <right></right>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import left from "@/components/left.vue";
+import right from "@/components/right.vue"
 export default {
-  name: 'App',
+  // 在components里注册的是私有子组件，全局子组件注册见count组件
   components: {
-    HelloWorld
-  }
-}
+    left, right
+  },
+};
 </script>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang='less'>
+.app-container {
+  padding: 1px 20px 20px;
+  background-color: pink;
+}
+.box {
+  display: flex;
 }
 </style>
